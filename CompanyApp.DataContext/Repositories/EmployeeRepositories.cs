@@ -11,11 +11,10 @@ namespace CompanyApp.DataContext.Repositories
     public class EmployeeRepositories : IRepositories<Employee>
     {
 
-        bool IRepositories<Employee>.Create(Employee entity)
+        public bool Create (Employee entity)
         {
             try
             {
-
                 DbContext.employee.Add(entity);
                 return true;
             }
@@ -26,7 +25,7 @@ namespace CompanyApp.DataContext.Repositories
             }
         }
 
-        bool IRepositories<Employee>.Delete(Employee entity)
+        public bool Delete(Employee entity)
         {
             try
             {
@@ -38,11 +37,22 @@ namespace CompanyApp.DataContext.Repositories
             {
                 throw;
             }
+
         }
 
-        bool IRepositories<Employee>.Update(Employee entity)
+        public bool Update(Employee entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var ExistEmployee = GetType(s => s.Id == entity.Id);
+                ExistEmployee = entity;
+                return true;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
