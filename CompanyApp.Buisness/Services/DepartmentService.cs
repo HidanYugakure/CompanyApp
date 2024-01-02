@@ -30,7 +30,10 @@ namespace CompanyApp.Buisness.Services
 
         public Department Delete(int id)
         {
-            throw new NotImplementedException();
+            Department existdepartment = _departmentRepositories.Get(e => e.Id == id);
+            if (existdepartment is not null) return null;
+            if (_departmentRepositories.Delete(existdepartment)) return existdepartment;
+            return null;
         }
 
         public Department Get(int id)
@@ -57,7 +60,17 @@ namespace CompanyApp.Buisness.Services
 
         public Department Update(int id, Department department)
         {
-            throw new NotImplementedException();
+            var existDepartment = _departmentRepositories.Get(d => d.Id == id);
+            if (existDepartment is null) return null;
+            var existDepartmentWithName = _departmentRepositories.Get(g => g.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase) && g.Id != existDepartment.Id);
+            if (existDepartmentWithName is not null) return null;
+            existDepartment.Name = department.Name;
+            var result = _departmentRepositories.Update(department);
+            if (result)
+            {
+                return existDepartment;
+            }
+            return null;
         }
     }
 }

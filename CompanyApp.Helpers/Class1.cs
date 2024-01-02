@@ -11,21 +11,21 @@
                 Console.ResetColor();
             }
         }
-        public enum Menus
-        {
-            createStudent = 1,
-            getAllStudents,
-            getAllStudentsWithName,
-            getStudentById,
-            DeleteStudent,
-            UpdateStudent,
-            CreateGroup,
-            getAllGroups,
-            getAllStudentsWithGroupName,
-            UpdateGroup,
-            deleteGroup
-        }
-    }
+    //    public enum Menus
+    //    {
+    //        //createStudent = 1,
+    //        //getAllStudents,
+    //        //getAllStudentsWithName,
+    //        //getStudentById,
+    //        //DeleteStudent,
+    //        //UpdateStudent,
+    //        //CreateGroup,
+    //        //getAllGroups,
+    //        //getAllStudentsWithGroupName,
+    //        //UpdateGroup,
+    //        //deleteGroup
+    //    }
+    //}
 
 }
 

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CompanyApp.DataContext\CompanyApp.DataContext.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -8,7 +8,9 @@ namespace CompanyApp.Domain.Common
 {
     public class BaseEntity
     {
+        public string Name { get; set; }
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set;}
     }
 }

@@ -17,6 +17,5 @@ namespace CompanyApp.Buisness.Interface
         List<Department> GetAll(string name);
         List<Department> GetAll(int capacity);
         List <Department> GetAll();
-
     }
 }

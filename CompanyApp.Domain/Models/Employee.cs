@@ -9,7 +9,7 @@ namespace CompanyApp.Domain.Models
 {
     public class Employee : BaseEntity
     {
-      public string FullName { get; set; } 
+      public string LastName { get; set; }
       public int Id { get; set; }
       public int Age { get; set; }
       public string Adress { get; set; } 
