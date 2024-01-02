@@ -10,12 +10,12 @@ namespace CompanyApp.DataContext
     static class DbContext
     {
 
-        public static List <Employee> employee {  get; set; }
-        public static List <Department> department { get; set; }
+        public static List <Employee> Employees {  get; set; }
+        public static List <Department> Departments { get; set; }
         static DbContext()
         {
-            employee = new List <Employee>();
-            department = new List <Department>();
+            Employees = new List <Employee>();
+            Departments = new List <Department>();
         }
     }
 }

@@ -1,10 +1,5 @@
 ﻿using CompanyApp.DataContext.Interface;
 using CompanyApp.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CompanyApp.DataContext.Repositories
 {
@@ -15,13 +10,12 @@ namespace CompanyApp.DataContext.Repositories
         {
             try
             {
-                DbContext.employee.Add(entity);
+                DbContext.Employees.Add(entity);
                 return true;
             }
             catch (Exception)
             {
                 throw;
-
             }
         }
 
@@ -29,23 +23,29 @@ namespace CompanyApp.DataContext.Repositories
         {
             try
             {
-
-                DbContext.employee.Remove(entity);
+                DbContext.Employees.Remove(entity);
                 return true;
             }
             catch (Exception)
             {
                 throw;
             }
-
         }
 
+        public Employee Get (Predicate<Employee> filter)
+        {
+            return DbContext.Employees.Find(filter);
+        }
+        public List<Employee> GetAll(Predicate<Employee> filter=null)
+        {
+            return filter is null ? DbContext.Employees : DbContext.Employees.FindAll(filter);
+        }
         public bool Update(Employee entity)
         {
             try
             {
-                var ExistEmployee = GetType(s => s.Id == entity.Id);
-                ExistEmployee = entity;
+                var existEmployee = Get(s => s.Id == entity.Id);
+                existEmployee = entity;
                 return true;
 
             }
@@ -54,5 +54,6 @@ namespace CompanyApp.DataContext.Repositories
                 throw;
             }
         }
+
     }
 }
