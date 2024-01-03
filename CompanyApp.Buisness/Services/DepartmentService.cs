@@ -57,7 +57,6 @@ namespace CompanyApp.Buisness.Services
         {
             return _departmentRepositories.GetAll();
         }
-
         public Department Update(int id, Department department)
         {
             var existDepartment = _departmentRepositories.Get(d => d.Id == id);
