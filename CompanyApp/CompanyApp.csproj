@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CompanyApp.Buisness\CompanyApp.Buisness.csproj" />
+    <ProjectReference Include="..\CompanyApp.Domain\CompanyApp.Domain.csproj" />
+    <ProjectReference Include="..\CompanyApp.Helpers\CompanyApp.Helpers.csproj" />
+  </ItemGroup>
+
 </Project>
