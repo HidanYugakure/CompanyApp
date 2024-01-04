@@ -31,7 +31,6 @@ namespace CompanyApp.DataContext.Repositories
                 throw;
             }
         }
-
         public Department Get(Predicate<Department> filter)
         {
             return DbContext.Departments.Find(filter);

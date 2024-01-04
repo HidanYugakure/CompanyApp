@@ -2,11 +2,8 @@
 using CompanyApp.Buisness.Services;
 using CompanyApp.Domain.Models;
 using CompanyApp.Helpers;
-
-
 namespace CompanyApp.Controllers
-{
-    public class EmployeeController
+{    public class EmployeeController
     {
         private readonly EmployeeService employeeServices;
         public void CreateEmployee()
@@ -81,6 +78,22 @@ namespace CompanyApp.Controllers
                 Helper.changeTextColor("empty", ConsoleColor.Red);
             }
         }
+        public void GetAll()
+        {
+            Helper.changeTextColor("Employee list :",ConsoleColor.Magenta);
+            var employeeGettAll = employeeServices.GetAll();
+            if (employeeGettAll.Count > 0)
+            {
+                foreach (var employee in employeeGettAll)
+                {
+                    Helper.changeTextColor($"id:{employee.Id} Name:{employee.Name}", ConsoleColor.Green);
+                }
+            }
+            else
+            {
+                Helper.changeTextColor("empty list",ConsoleColor.Yellow);
+            }
+        }
         public void GetAllWithByName()
         {
             Helper.changeTextColor("Employee list : Name", ConsoleColor.Red);
@@ -107,6 +120,16 @@ namespace CompanyApp.Controllers
             foreach (var item in something)
             {
                 Console.WriteLine($"id:{item.Id}Name:{item.Name} ");
+            }
+        }
+        public void GetWithByDepartamentName()
+        {
+            Helper.changeTextColor("Enter Departament Name:", ConsoleColor.Green);
+            string DepartamentName = Console.ReadLine();
+            var something = employeeServices.GetEmployeeDepartmentId(DepartamentName);
+            foreach (var item in something)
+            {
+                Console.WriteLine($"id:{item.Id}Name:{item.Name}");
             }
         }
     }

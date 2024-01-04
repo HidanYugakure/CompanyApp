@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CompanyApp.Helpers
+﻿namespace CompanyApp.Helpers
 {
     public class Helper
     {
@@ -23,5 +17,15 @@ namespace CompanyApp.Helpers
      GetAllDepartmentByCapacity=4,
      UpdateDepartment=5,
      DeleteDepartment=6,
+     CreateEmployee=7,
+     EmployeeDelete = 8,
+     EmployeUpdate = 9,
+     Get = 10,
+     GetAll= 11,
+     GetAllWithByName=12,
+     GetAllWithByAge=13,
+     GetWithByDepartmentId=14,
+     GetWithByDepartamentName=15,
+     exitCatalog=16,
     }
 }

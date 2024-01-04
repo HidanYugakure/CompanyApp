@@ -1,22 +1,21 @@
 ﻿using CompanyApp.Buisness.Services;
 using CompanyApp.Domain.Models;
 using CompanyApp.Helpers;
-using System;
-
-namespace CompanyApp.Controllers
-{
-    public class DepartmentController
+namespace CompanyApp.Controllers  
+{   public class DepartmentController
     {
+        
         private readonly DepartmentService departmentServices;
         public DepartmentController()
         {
             departmentServices = new DepartmentService();
+         
         }
         public void CreateDepartment()
         {
             Helper.changeTextColor("Please Enter Departament Name", ConsoleColor.Magenta);
             string Departamentname = Console.ReadLine();
-            Helper.changeTextColor("Please Enter Department Employee Name", ConsoleColor.Magenta);
+            Helper.changeTextColor("Please Enter Department Size", ConsoleColor.Magenta);
             string size = Console.ReadLine();
             bool result = int.TryParse(size, out int DepartamentSize);
             if (result)
