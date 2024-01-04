@@ -4,6 +4,7 @@ using CompanyApp.Domain.Models;
 using CompanyApp.Helpers;
 
 Department department = new Department();
+Employee employee = new Employee();
 
 while (true)
 {
@@ -27,4 +28,6 @@ while (true)
             goto Enter;
       }
 }
+
+
 
