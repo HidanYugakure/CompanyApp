@@ -1,11 +1,6 @@
 ﻿using CompanyApp.Buisness.Interface;
 using CompanyApp.DataContext.Repositories;
 using CompanyApp.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CompanyApp.Buisness.Services
 {
@@ -28,8 +23,8 @@ namespace CompanyApp.Buisness.Services
         }
         public Department Delete(int id)
         {
-            Department existdepartment = _departmentRepositories.Get(e => e.Id == id);
-            if (existdepartment is not null) return null;
+            Department existdepartment = _departmentRepositories.Get(d => d.Id == id);
+            if (existdepartment is null) return null;
             if (_departmentRepositories.Delete(existdepartment)) return existdepartment;
             return null;
         }
@@ -41,10 +36,12 @@ namespace CompanyApp.Buisness.Services
             return existDepartment;
         }
 
+
         public List<Department> GetAll(string name)
         {
           return _departmentRepositories.GetAll(d => d.Name == name);
         }
+
 
         public List<Department> GetAll(int capacity)
         {

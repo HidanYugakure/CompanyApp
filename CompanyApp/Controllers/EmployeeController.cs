@@ -2,8 +2,9 @@
 using CompanyApp.Buisness.Services;
 using CompanyApp.Domain.Models;
 using CompanyApp.Helpers;
+using System.Threading.Channels;
 namespace CompanyApp.Controllers
-{    public class EmployeeController
+{    public class EmployeeController //
     {
         private readonly EmployeeService employeeServices;
         public EmployeeController()
@@ -19,6 +20,10 @@ namespace CompanyApp.Controllers
             string Surname = Console.ReadLine();
             Helper.changeTextColor("enter Department", ConsoleColor.Green);
             string Departamentname = Console.ReadLine();
+            Helper.changeTextColor("enter Employee Age", ConsoleColor.Magenta);
+            int Age= int.Parse(Console.ReadLine());
+            Helper.changeTextColor("enter Employee Adress", ConsoleColor.Magenta);
+            string Adress = Console.ReadLine();
             Employee employee = new();
             employee.Name = name;
             employee.LastName = Surname;
@@ -110,6 +115,7 @@ namespace CompanyApp.Controllers
         public void GetAllWithByAge()
         {
             Helper.changeTextColor("Employee list: Age", ConsoleColor.Green);
+            var age = int.TryParse(Console.ReadLine(), out var employeeAge);
             List<Employee> employee = employeeServices.GetAll();
             foreach(Employee employees in employee)
             {

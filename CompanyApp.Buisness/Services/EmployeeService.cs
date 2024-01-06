@@ -14,7 +14,7 @@ namespace CompanyApp.Buisness.Services
         private readonly EmployeeRepositories _employeeRepositories = new();
         private readonly DepartmentRepositories _departmentRepositories = new();
         private int Count=1;
-            public Employee Create(Employee employee, string departmentName)
+        public Employee Create(Employee employee, string departmentName)
         {
             Department ExistDepartment = _departmentRepositories.Get(d => d.Name.Equals(departmentName, StringComparison.OrdinalIgnoreCase));
             if (ExistDepartment is null) return null;
@@ -53,16 +53,10 @@ namespace CompanyApp.Buisness.Services
         {
             return _employeeRepositories.GetAll(e => e.Equals(departmentId));
         }
-
         public List<Employee> GetEmployeeDepartmentId(string departmentName)
         {
             throw new NotImplementedException();
         }
-
-        //public List<Employee> GetAllWithDepartmentName(string departmentName)
-        //{
-        //    return _employeeRepositories.GetAllWithDepartmentName(e => e.Equals(departmentName));
-        //}
         public Employee Update(int id, Employee employee, string departmentName)
         {
            Employee existEmployee = _employeeRepositories.Get(e=>e.Id == id);

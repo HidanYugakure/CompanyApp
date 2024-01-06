@@ -18,7 +18,6 @@ namespace CompanyApp.DataContext.Repositories
                 throw;
             }
         }
-
         public bool Delete(Department entity)
         {
             try

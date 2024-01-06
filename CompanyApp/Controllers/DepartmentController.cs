@@ -114,7 +114,7 @@ namespace CompanyApp.Controllers
             }
             else
             {
-                Helper.changeTextColor("Employee deleted", ConsoleColor.Red);
+                Helper.changeTextColor("Department deleted", ConsoleColor.Red);
             }
         }
     }

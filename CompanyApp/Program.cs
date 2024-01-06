@@ -3,7 +3,6 @@ using CompanyApp.Buisness.Interface;
 using CompanyApp.Controllers;
 using CompanyApp.Domain.Models;
 using CompanyApp.Helpers;
-using System;
 
 Department department = new Department();
 DepartmentController departmentController = new DepartmentController();
@@ -12,7 +11,7 @@ Employee employee = new Employee();
 
 while (true)
 {
-    Helper.changeTextColor("  ______ _     _                         _____ __  __  _____ \r\n |  ____(_)   | |                       / ____|  \\/  |/ ____|\r\n | |__   _  __| | __ _ _ __    ______  | |    | \\  / | (___  \r\n |  __| | |/ _` |/ _` | '_ \\  |______| | |    | |\\/| |\\___ \\ \r\n | |    | | (_| | (_| | | | |          | |____| |  | |____) |\r\n |_|    |_|\\__,_|\\__,_|_| |_|           \\_____|_|  |_|_____/ \r\n                                                             \r\n                                                             ", ConsoleColor.DarkGreen);
+    Helper.changeTextColor("Welcome my AcademyApp", ConsoleColor.Blue);
     Helper.changeTextColor("1. CreateDepartment\n" +
                         "2. GetAllDepartament\n" +
                         "3. GetDepartmentById\n" +
@@ -29,20 +28,6 @@ while (true)
                         "14.GetWithByDepartmentId\n" +
                         "15GetWithByDepartamentName\n" +
                         "16.exitMenu", ConsoleColor.Magenta);
-
-    //Enter: string choice = Console.ReadLine();
-    //    int result;
-    //    bool isConvertable = int.TryParse(choice, out result);
-
-    //    switch (result)
-    //    {
-    //        case (int)Catalog.CreateDepartment:
-
-    //        default:
-    //            Helper.changeTextColor("Wrong", ConsoleColor.Red);
-    //            goto Enter;
-    //    }
-    //}
     string catalog = Console.ReadLine();
     bool result = int.TryParse(catalog, out int intcatalog);
     if (result && intcatalog > 0 && intcatalog < 16)
@@ -94,7 +79,7 @@ while (true)
                 break;
         } 
     }
-    else if  (intcatalog == 17)
+    else if  (intcatalog == 16)
     {
         Helper.changeTextColor("you left the catalog", ConsoleColor.Red);
         break;
