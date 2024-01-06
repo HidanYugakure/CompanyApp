@@ -44,7 +44,7 @@ namespace CompanyApp.DataContext.Repositories
         {
             try
             {
-                var existEmployee = Get(s => s.Id == entity.Id);
+                var existEmployee = Get(e => e.Id == entity.Id);
                 existEmployee = entity;
                 return true;
 
