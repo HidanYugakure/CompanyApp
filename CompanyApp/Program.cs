@@ -12,6 +12,7 @@ Employee employee = new Employee();
 
 while (true)
 {
+    Helper.changeTextColor("  ______ _     _                         _____ __  __  _____ \r\n |  ____(_)   | |                       / ____|  \\/  |/ ____|\r\n | |__   _  __| | __ _ _ __    ______  | |    | \\  / | (___  \r\n |  __| | |/ _` |/ _` | '_ \\  |______| | |    | |\\/| |\\___ \\ \r\n | |    | | (_| | (_| | | | |          | |____| |  | |____) |\r\n |_|    |_|\\__,_|\\__,_|_| |_|           \\_____|_|  |_|_____/ \r\n                                                             \r\n                                                             ", ConsoleColor.DarkGreen);
     Helper.changeTextColor("1. CreateDepartment\n" +
                         "2. GetAllDepartament\n" +
                         "3. GetDepartmentById\n" +
@@ -103,7 +104,7 @@ while (true)
     {
         Helper.changeTextColor("pleasy try true number", ConsoleColor.Red);
     }
-    }
+  }
 
 
 

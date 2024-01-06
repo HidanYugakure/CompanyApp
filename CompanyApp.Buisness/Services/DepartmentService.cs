@@ -11,10 +11,9 @@ namespace CompanyApp.Buisness.Services
 {
     public class DepartmentService : IDepartament
     {
-        private readonly DepartmentRepositories _departmentRepositories;
-        private readonly EmployeeRepositories _employeeRepositories;
+        private readonly DepartmentRepositories _departmentRepositories=new();
+        private readonly EmployeeRepositories _employeeRepositories = new();
         private int Count = 1;
-
         public Department Create(Department department)
         {
          Department existDepartmentWithName = _departmentRepositories.Get(d=>d.Name.Equals(department.Name,StringComparison.OrdinalIgnoreCase));
@@ -27,7 +26,6 @@ namespace CompanyApp.Buisness.Services
             }
             return null;
         }
-
         public Department Delete(int id)
         {
             Department existdepartment = _departmentRepositories.Get(e => e.Id == id);

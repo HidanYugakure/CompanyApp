@@ -72,6 +72,7 @@ namespace CompanyApp.Controllers
         }
         public void GetAllDepartmentByCapacity()
         {
+            Helper.changeTextColor("Enter A Capacity", ConsoleColor.Magenta);
             int capacity = int.Parse(Console.ReadLine());
             List<Department> departments = departmentServices.GetAll(capacity);
             foreach (Department department in departments)

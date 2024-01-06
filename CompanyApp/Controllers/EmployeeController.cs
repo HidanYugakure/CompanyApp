@@ -6,6 +6,11 @@ namespace CompanyApp.Controllers
 {    public class EmployeeController
     {
         private readonly EmployeeService employeeServices;
+        public EmployeeController()
+        {
+            employeeServices = new EmployeeService();
+
+        }
         public void CreateEmployee()
         {
             Helper.changeTextColor("enter Employee Name", ConsoleColor.Magenta);
@@ -17,7 +22,6 @@ namespace CompanyApp.Controllers
             Employee employee = new();
             employee.Name = name;
             employee.LastName = Surname;
-            //_employeeService.Create(employee, Departamentname);
             if (employeeServices.Create(employee, Departamentname) is null)
             {
                 Helper.changeTextColor("went wrong", ConsoleColor.Red);
